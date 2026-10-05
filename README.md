@@ -31,18 +31,18 @@ key is remote.
 
 ## Install
 
-Build and install the package:
+The one AUR dependency is `python-pyhanko`. Install it from the AUR with its check phase
+skipped, then build easysign-linux from the local checkout:
 
 ```sh
+yay -S python-pyhanko --mflags "--nocheck"
 git clone <this repo> easysign-linux
 cd easysign-linux
-yay -Bi .      # paru: paru -Ui
+makepkg -si
 ```
 
-Two dependencies (`python-pyhanko`, `python-pkcs11`) live in the AUR. `makepkg` only
-installs dependencies from the official repositories and never touches the AUR, so use
-an AUR helper. `yay -B <dir>` builds a local PKGBUILD and resolves its AUR dependencies.
-Plain `makepkg -si` works too, but only after you install those two yourself.
+`python-pyhanko` is installed first because `makepkg` resolves dependencies only from the
+official repositories, not the AUR. The remaining dependencies come from the repos.
 
 Then do the per-user setup once:
 
