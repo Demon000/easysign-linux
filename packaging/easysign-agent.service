@@ -1,0 +1,13 @@
+[Unit]
+Description=EasySign cloud signature agent (Trans Sped mSign)
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/easysign-agent
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=graphical-session.target

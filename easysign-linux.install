@@ -1,0 +1,22 @@
+post_install() {
+    cat <<'MSG'
+Per-user setup (run as your normal user, not root):
+
+  systemctl --user enable --now easysign-agent
+  modutil -add easysign -libfile /usr/lib/easysign/libeasysign_pkcs11.so \
+      -dbdir sql:"$HOME/.pki/nssdb" -force
+  easysign profile add +40XXXXXXXXX
+
+Then restart your browser so it loads the module.
+MSG
+}
+
+post_upgrade() {
+    echo "Restart the agent:  systemctl --user restart easysign-agent"
+}
+
+pre_remove() {
+    echo "Per-user cleanup, if you want it:"
+    echo "  systemctl --user disable --now easysign-agent"
+    echo "  modutil -delete easysign -dbdir sql:\"\$HOME/.pki/nssdb\" -force"
+}

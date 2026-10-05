@@ -1,0 +1,7 @@
+/target
+*.pem
+*.bin
+easysign-msg.txt
+/pdf/venv/
+__pycache__/
+*.pyc

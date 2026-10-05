@@ -1,0 +1,5 @@
+# Tested with: pyHanko 0.37, PyMuPDF 1.28, pillow 12, PySide6 6.11
+pyHanko
+PyMuPDF
+pillow
+PySide6

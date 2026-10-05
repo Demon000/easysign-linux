@@ -1,0 +1,18 @@
+pkgbase = easysign-linux
+	pkgdesc = Trans Sped mSign cloud certificate on Linux: browser client-auth and PDF signing
+	pkgver = 0.1.0
+	pkgrel = 1
+	url = https://github.com/demon000/easysign-linux
+	install = easysign-linux.install
+	arch = x86_64
+	license = MIT
+	makedepends = rust
+	depends = nss
+	depends = python
+	depends = zenity
+	depends = pyside6
+	depends = python-pymupdf
+	depends = python-pillow
+	depends = python-pyhanko
+
+pkgname = easysign-linux

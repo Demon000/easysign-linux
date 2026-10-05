@@ -1,0 +1,18 @@
+[package]
+name = "easysign-pkcs11"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+name = "easysign_pkcs11"
+crate-type = ["cdylib"]
+
+[dependencies]
+ipc = { path = "../ipc" }
+csc = { path = "../csc" }
+native-pkcs11 = { version = "0.2", features = ["custom-function-list"] }
+native-pkcs11-traits = "0.2"
+sha2.workspace = true
+sha1 = "0.10"
+base64.workspace = true
